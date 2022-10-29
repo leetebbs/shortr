@@ -7,7 +7,6 @@ require("dotenv").config();
 
 function App() {
   const myVar = "Bearer " + process.env.REACT_APP_TOKEN;
-  const text = "Enter A URL In the /n Field Above And Press /n Enter";
 
   useEffect(() => {
     document.querySelector("input").addEventListener("keydown", (event) => {
@@ -20,6 +19,7 @@ function App() {
   }, []);
 
   const [shortenUrl, setShortenUrl] = useState();
+
   function getShortUrl(inpt) {
     fetch("https://api-ssl.bitly.com/v4/shorten", {
       method: "POST",
